@@ -1,24 +1,21 @@
-
-public class Rectangle extends Shape{
-
+public class triangle {
     private int sideA , sideB;
     public static int counter = 0;
     public int counterForobject = 0;
-    public static String className = "rectangle";
+    public static String className = "triangle";
 
 
-    public Rectangle( int sideA, int sideB) {
-        this.topLeft = topLeft;
+    public triangle( int sideA, int sideB) {
         setSideA(sideA);
         setSideB(sideB);
         counter++;
         counterForobject++;
 
     }
-    public Rectangle(Point location, int sideA,int sideB) {
+    public triangle(Point location, int sideA,int sideB,int side) {
         super(location);
         setSideA(sideA);
-        setSideB(sideA);
+        setSideB(sideB);
 
     }
 
@@ -55,21 +52,27 @@ public class Rectangle extends Shape{
         } else {
             this.sideB = sideB;
         }
+
     }
+    public void setSideC(int sideC) {
+        if (sideC < 0) {
+            this.sideC = 0;
+            System.out.println("Side C can't be negative!!");
+        } else {
+            this.sideC = sideC;
     @Override
     public double perimeter(){
-        return * 2 ( sideA + sideB);
+        return (sideA + sideB + sideC);
     }
     @Override
     public double area(){
-        return sideA * sideB;
+        return sideA * sideB / 2;
 
     }
 
-
     @Override
     public String toString() {
-        return "Rectangle{" +
+        return "triangle{" +
                 "sideA=" + sideA +
                 ", sideB=" + sideB +
                 ", counterForobject=" + counterForobject +
@@ -77,5 +80,6 @@ public class Rectangle extends Shape{
     }
 
 
-    }
+}
+}
 }

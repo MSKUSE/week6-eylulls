@@ -1,7 +1,8 @@
-public class Circle {
+public class Circle extends  Shape{
 
     private Point center;
     private int radius;
+
 
     public Circle(Point center, int radius) {
         this.center = center;
@@ -22,11 +23,24 @@ public class Circle {
 
     public void setRadius(int radius) {
         if (radius < 0){
-            this.radius = 0;
-            System.out.println("Radius can't be negative");
+            throw new IllegalArgumentException("radius can not be negative!!");
         }else {
             this.radius = radius;
 
         }
     }
+
+    @Override
+    public double area() {
+        return Math.PI * this.radius * this.radius;
+    }
+
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "center=" + this.center +
+                ", radius=" + this.radius +
+                '}';
+    }
+
 }
